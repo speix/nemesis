@@ -1,0 +1,4 @@
+#Ignore IDE generated files and folders
+.buildpath
+.settings
+.project
