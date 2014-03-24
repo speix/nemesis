@@ -37,6 +37,7 @@ class Pusher implements WampServerInterface {
     public function onUnSubscribe(ConnectionInterface $conn, $topic) {
     }
     public function onOpen(ConnectionInterface $conn) {
+    	echo "New connection: ({$conn->resourceId})\n";
     }
     public function onClose(ConnectionInterface $conn) {
     }
