@@ -1,5 +1,5 @@
 <?php
-    require dirname(__DIR__) . '/vendor/autoload.php';
+    require dirname(__DIR__) . 'vendor/autoload.php';
 
     $loop   = React\EventLoop\Factory::create();
     $pusher = new Nemesis\Pusher;
