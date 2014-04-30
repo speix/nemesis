@@ -30,6 +30,8 @@ class Pusher implements WampServerInterface {
     		return;
     	}
     
+    	echo "Action called!";
+    	
     	$topic = $this->subscribedTopics[$entryData['context']];
     	// re-send the data to all the clients subscribed to that category/context
     	$topic->broadcast($entryData);
