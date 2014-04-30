@@ -1,5 +1,5 @@
 <?php
-namespace MyApp;
+namespace Nemesis;
 use Ratchet\ConnectionInterface;
 use Ratchet\Wamp\WampServerInterface;
 
