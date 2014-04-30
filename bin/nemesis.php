@@ -1,8 +1,9 @@
 <?php
-    require dirname(__DIR__) . '/vendor/autoload.php';
+    use React;
+require dirname(__DIR__) . '/vendor/autoload.php';
 
     $loop   = React\EventLoop\Factory::create();
-    $pusher = new Nemesis\Pusher;
+    $pusher = new MyApp\Pusher;
 
     // Listen for the web server to make a ZeroMQ push after an ajax request
     $context = new React\ZMQ\Context($loop);
