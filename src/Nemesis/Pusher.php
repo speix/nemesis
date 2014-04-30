@@ -24,13 +24,11 @@ class Pusher implements WampServerInterface {
      */
     public function onNudgePost($entry) {
     	$entryData = json_decode($entry, true);
-    	
+    	echo 'On Nudge Post called';
     	// If the lookup topic object isn't set there is no one to publish to
     	if (!array_key_exists($entryData['context'], $this->subscribedTopics)) {
     		return;
     	}
-    
-    	echo "Action called!";
     	
     	$topic = $this->subscribedTopics[$entryData['context']];
     	// re-send the data to all the clients subscribed to that category/context
