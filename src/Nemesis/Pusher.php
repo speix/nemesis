@@ -24,7 +24,7 @@ class Pusher implements WampServerInterface {
      */
     public function onNudgePost($entry) {
     	$entryData = json_decode($entry, true);
-    	echo 'On Nudge Post called';
+    	
     	// If the lookup topic object isn't set there is no one to publish to
     	if (!array_key_exists($entryData['context'], $this->subscribedTopics)) {
     		return;
@@ -49,11 +49,13 @@ class Pusher implements WampServerInterface {
     
     public function onCall(ConnectionInterface $conn, $id, $topic, array $params) {
         // In this application if clients send data it's because the user hacked around in console
+        echo 'onCall1';
         $conn->callError($id, $topic, 'You are not allowed to make calls')->close();
     }
     
     public function onPublish(ConnectionInterface $conn, $topic, $event, array $exclude, array $eligible) {
         // In this application if clients send data it's because the user hacked around in console
+    	echo 'onCall2';
         $conn->close();
     }
     
