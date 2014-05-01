@@ -39,9 +39,7 @@ class Pusher implements WampServerInterface {
     }
     
     public function onOpen(ConnectionInterface $conn) {
-    	echo 'New connection from: ' . $conn->remoteAddress . PHP_EOL;
-    	// or if you're behind a proxy:
-    	echo 'proxy conn: ' . $conn->WebSocket->request->getHeader('X-Forwarded-For');
+    	echo 'New connection: ' . $conn->remoteAddress . ' Proxy conn: ' . $conn->WebSocket->request->getHeader('X-Forwarded-For') . PHP_EOL;
     }
     
     public function onClose(ConnectionInterface $conn) {
