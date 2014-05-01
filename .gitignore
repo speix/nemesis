@@ -2,6 +2,5 @@
 .buildpath
 .settings
 .project
-vendor
 composer.json
 composer.lock
