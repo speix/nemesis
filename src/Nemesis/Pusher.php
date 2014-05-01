@@ -39,7 +39,7 @@ class Pusher implements WampServerInterface {
     }
     
     public function onOpen(ConnectionInterface $conn) {
-    	echo 'New connection: ' . $conn->remoteAddress . ' Proxy conn: ' . $conn->WebSocket->request->getHeader('X-Forwarded-For') . PHP_EOL;
+    	echo 'Remote addr/Proxy conn addr: ' . $conn->remoteAddress . ' / ' . $conn->WebSocket->request->getHeader('X-Forwarded-For') . PHP_EOL;
     }
     
     public function onClose(ConnectionInterface $conn) {
